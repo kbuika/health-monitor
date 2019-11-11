@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { HomeContext } from '../context';
+import socketIOClient from "socket.io-client";
 
-const API = "https://jsonplaceholder.typicode.com/users/"
+// const API = "https://jsonplaceholder.typicode.com/users/"
 
 // provider component
 class HomeProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            data: false,
+            endpoint: "", //server endpoint here
             patients: [ {id: 1, firstName: "Kelvin", lastName: "Kimani"},
                         {id: 2, firstName: "Joyce", lastName: "Watti"}
         ],
@@ -18,38 +21,28 @@ class HomeProvider extends Component {
     }
     componentDidMount() {
         window.scrollTo(0,0);
-        // load data from the api
-        this.setState({ isLoading: true});
-
-        // fetch(API)
-        //     .then(response => response.json())
-        //     .then(json => {
-        //         this.setState({
-        //             patients: json,
-        //             isLoading: false
-        //         });
-        //         console.log(this.state.patients)
-        //     })
-        //     .catch(error => console.log(error))
-            
+        
+        const { endpoint } = this.state;
+        const socket = socketIOClient(endpoint);
+        socket.on("Data", Data => this.setState({ data: Data}));
 
     }
-    handleLoadVitals = event => {
-        event.preventDefault();
-        const id = event.currentTarget.id;
-        this.setState({isLoading: true});
+    // handleLoadVitals = event => {
+    //     event.preventDefault();
+    //     const id = event.currentTarget.id;
+    //     this.setState({isLoading: true});
 
-        fetch(API + id)
-            .then(response => response.json())
-            .then(jsonRecords => {
-                this.setState({
-                    patientRecords: jsonRecords,
-                    isLoading: false
-                });
-            })
-            .catch(error => console.log(error))
+    //     fetch(API + id)
+    //         .then(response => response.json())
+    //         .then(jsonRecords => {
+    //             this.setState({
+    //                 patientRecords: jsonRecords,
+    //                 isLoading: false
+    //             });
+    //         })
+    //         .catch(error => console.log(error))
                    
-    }
+    // }
 
    handleComment = event => {
        const comment = event.target.value;

@@ -7,9 +7,6 @@ import HomeProvider from "../state-management/provider/HomeProvider";
 
 function LoginPage() { 
     
-    const kibuika = "hello kibuika";
-    localStorage.setItem('name', kibuika);
-    
         return ( 
             <HomeProvider>
 
