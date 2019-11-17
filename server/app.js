@@ -12,20 +12,24 @@ app.use(index);
 const server = http.createServer(app);
 const io = socketIo(server);
 
-io.on('connection', socket => {
-    setInterval (() => getApiAndEmit(socket),
-    1000
-    );
-    socket.on('disconnect', () =>
-    console.log("Client disconnected"));
+let interval;
+io.on("connection", socket => {
+ console.log("New client connected");
+ if (interval) {
+ clearInterval(interval);
+ }
+ interval = setInterval(() => getApiAndEmit(socket), 10000);
+ socket.on("disconnect", () => {
+ console.log("Client disconnected");
+ });
 });
 
 const getApiAndEmit = async socket => {
     try {
         const res = await axios.get (
-            "// endpoint here"
+            "https://api.thingspeak.com/channels/913414/feeds.json?api_key=9W82URME4TT8Z99J&results=2"
         );
-        socket.emit("Data", res.json({ name: "hello"}));
+        socket.emit("Data", res.data.feeds[1]);
     } catch (error) {
         console.error(`Error: ${error.code}`);
     }

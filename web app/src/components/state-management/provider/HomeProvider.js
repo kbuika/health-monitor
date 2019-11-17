@@ -9,8 +9,8 @@ class HomeProvider extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: false,
-            endpoint: "", //server endpoint here
+            response: {},
+            endpoint: "http://127.0.0.1:4000", //server endpoint here
             patients: [ {id: 1, firstName: "Kelvin", lastName: "Kimani"},
                         {id: 2, firstName: "Joyce", lastName: "Watti"}
         ],
@@ -24,7 +24,12 @@ class HomeProvider extends Component {
         
         const { endpoint } = this.state;
         const socket = socketIOClient(endpoint);
-        socket.on("Data", Data => this.setState({ data: Data}));
+        socket.on("Data", response => this.setState({ response: response}));
+        //this.setState({ response: data})
+        
+        
+
+        
 
     }
     // handleLoadVitals = event => {
