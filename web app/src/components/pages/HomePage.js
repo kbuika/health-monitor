@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { HomeContext } from "../state-management/context";
 import HomeProvider from "../state-management/provider/HomeProvider";
 
-let i = -1;
+let i = 1;
 
 
 function HomePage() {

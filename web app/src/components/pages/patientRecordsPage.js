@@ -51,9 +51,18 @@ class RecordsPage extends Component {
                             </div>
                             <p className="status-blood-pressure">
                                 <strong>Status: </strong>
-                                <i className="fas fa-arrow-down status"></i>
+                                {/* <i className="fas fa-arrow-down status"></i> */}
                             </p>
-                            {/* <p>{record.name}</p> */}
+                            {context.state.response.field1
+                                ? <p className="status-blood-pressure">
+                                <i className="h5">{context.state.response.field1} </i> <i>mm Hg</i>               
+
+                            </p>
+                            : <p className="status-blood-pressure">
+                                <h5 style={{color: 'green'}}>Loading...</h5>
+                            </p>
+                            }
+                            
                         <Card.Text>
                         
                         </Card.Text>
@@ -72,8 +81,19 @@ class RecordsPage extends Component {
                         <Card.Text>
                             <p className="status-blood-pressure">
                                 <strong>Status: </strong>
-                                <i className="fas fa-thumbs-down status"></i>
+                                {/* <i className="fas fa-thumbs-down status"></i> */}
+
                             </p>
+                            
+                        {context.state.response.field2
+                                ? <p className="status-blood-pressure">
+                                <i className="h5">{context.state.response.field2} </i> <i>bpm</i>               
+
+                        </p>
+                            : <p className="status-blood-pressure">
+                                <h5 style={{color: 'green'}}>Loading...</h5>
+                            </p>
+                            }
                         </Card.Text>
                         </Card.Body>
                     </Card>
@@ -82,15 +102,27 @@ class RecordsPage extends Component {
                         <Card.Header>
                             <div>
                                 <i className="fas fa-thermometer"></i>
-                                <i className="h4">Temperature ( °C )</i>                   
+                                <i className="h4">Temperature ( °C )</i> 
+                  
                             </div>
                         </Card.Header>
                         <Card.Body>
                         <Card.Text>
                         <p className="status-blood-pressure">
                             <strong>Status: </strong>
-                            <i className="fas fa-arrow-down status"></i>
+                            {/* <i className="fas fa-arrow-down status"></i> */}
+
                         </p>
+                        
+                        {context.state.response.field3
+                                ? <p className="status-blood-pressure">
+                                <i className="h5">{context.state.response.field3} </i>  <i>°C</i>              
+        
+                                </p>
+                            : <p className="status-blood-pressure">
+                                <h5 style={{color: 'green'}}>Loading...</h5>
+                            </p>
+                            }
                         </Card.Text>
                         </Card.Body>
                     </Card>
