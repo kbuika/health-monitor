@@ -4,8 +4,7 @@
   "description": "Server that gets data from the APIs",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "kibuikacodes@gmail.com",
   "license": "ISC",
@@ -14,5 +13,8 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.4",
     "socket.io": "^2.3.0"
+  },
+  "engines": {
+    "node": "12.2.0"
   }
 }

@@ -24,7 +24,7 @@ class RecordsPage extends Component {
                             <Nav style={{marginLeft: "60%"}}>
                             <Link to="/home" style={{marginTop: "10px"}}>Patient Lists</Link>
                             <Nav.Link eventKey={2} to="/login">
-                                Dr. Christopher
+                                Dr. Bashir
                             </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>

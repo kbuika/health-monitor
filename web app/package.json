@@ -2,6 +2,10 @@
   "name": "health-monitor",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.13.0",
+    "node": "12.2.0"
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "react": "^16.9.0",

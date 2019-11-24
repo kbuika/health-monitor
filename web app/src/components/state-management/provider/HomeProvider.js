@@ -10,7 +10,7 @@ class HomeProvider extends Component {
         super(props);
         this.state = {
             response: {},
-            endpoint: "http://127.0.0.1:4000", //server endpoint here
+            endpoint: "https://health-server.herokuapp.com/", //server endpoint here
             patients: [ {id: 1, firstName: "Kelvin", lastName: "Kimani"},
                         {id: 2, firstName: "Joyce", lastName: "Watti"}
         ],
@@ -25,11 +25,6 @@ class HomeProvider extends Component {
         const { endpoint } = this.state;
         const socket = socketIOClient(endpoint);
         socket.on("Data", response => this.setState({ response: response}));
-        //this.setState({ response: data})
-        
-        
-
-        
 
     }
     // handleLoadVitals = event => {

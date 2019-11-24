@@ -25,7 +25,7 @@ function HomePage() {
                             <Nav style={{marginLeft: "60%"}}>
                             <Nav.Link href="#">Patient Lists</Nav.Link>
                             <Nav.Link eventKey={2} href="#">
-                                Dr. Christopher
+                                Dr. Bashir
                             </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
