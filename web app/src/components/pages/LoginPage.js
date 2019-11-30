@@ -23,33 +23,34 @@ function LoginPage() {
                                 
                                     <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
                                     <Tab eventKey="doctor" title="Doctor">
-                                    <Form>
+                                    <Form >
                                     <Form.Group controlId="formBasicEmail">
                                         <Form.Label>Doctor's email</Form.Label>
                                         <br/>
-                                        <Form.Control type="Email" placeholder="Enter Email" className="input"/>
+                                        <Form.Control type="Email" name='email' placeholder="Enter Email" className="input" />
                                         
                                     </Form.Group>
 
                                     <Form.Group controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <br/>
-                                        <Form.Control type="password" placeholder="Password" className="input"/>
+                                        <Form.Control type="password" placeholder="Password" className="input" onChange={context.handleDoctorDetails}/>
                                     </Form.Group>
                                     
                                     
                                         <Link to="/home" style={{color: "white"}}>
-                                        <Button variant="success" type="submit" classname="submit" block>
+                                        <Button variant="success" type="submit" classname="submit" block disabled={context.state.buttonDocLogin}>
                                             Login
                                         </Button>
                                             </Link>
-                                        
+
+                                            
                                     
                                     </Form>
                                         
                                     </Tab>
                                     <Tab eventKey="patient" title="Patient">
-                                    <Form>
+                                    <Form >
                                     <Form.Group controlId="formBasicText">
                                         <Form.Label>Username</Form.Label>
                                         <br/>
@@ -60,12 +61,12 @@ function LoginPage() {
                                     <Form.Group controlId="formBasicPassword">
                                         <Form.Label>Password</Form.Label>
                                         <br/>
-                                        <Form.Control type="password" placeholder="Password" className="input"/>
+                                        <Form.Control type="password" placeholder="Password" className="input" onChange={context.handlePatientDetails}/>
                                     </Form.Group>
                                     
                                     
                                         <Link to="/your-vitals" style={{color: "white"}} >
-                                        <Button  variant="success" type="submit" classname="submit" block >
+                                        <Button  variant="success" type="submit" classname="submit" block disabled={context.state.buttonPatientLogin}>
                                             Login
                                         </Button>
                                             </Link>

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { HomeContext } from '../context';
 import socketIOClient from "socket.io-client";
 
-// const API = "https://jsonplaceholder.typicode.com/users/"
 
 // provider component
 class HomeProvider extends Component {
@@ -14,9 +13,10 @@ class HomeProvider extends Component {
             patients: [ {id: 1, firstName: "Kelvin", lastName: "Kimani"},
                         {id: 2, firstName: "Joyce", lastName: "Watti"}
         ],
-            patientRecords: {},
-            isLoading: false,
-            docComment: ''
+            docComment: '',
+            buttonDocLogin: true,
+            buttonPatientLogin: true,
+           
         }
     }
     componentDidMount() {
@@ -26,23 +26,35 @@ class HomeProvider extends Component {
         const socket = socketIOClient(endpoint);
         socket.on("Data", response => this.setState({ response: response}));
 
-    }
-    // handleLoadVitals = event => {
-    //     event.preventDefault();
-    //     const id = event.currentTarget.id;
-    //     this.setState({isLoading: true});
+        this.setState({
+            buttonDocLogin: true,
+            buttonPatientLogin: true
+        })
 
-    //     fetch(API + id)
-    //         .then(response => response.json())
-    //         .then(jsonRecords => {
-    //             this.setState({
-    //                 patientRecords: jsonRecords,
-    //                 isLoading: false
-    //             });
-    //         })
-    //         .catch(error => console.log(error))
-                   
-    // }
+    }
+
+handleDoctorDetails = event => {
+    if ( event.target.value === 'moha1234') {
+        this.setState({
+             buttonDocLogin: false,
+            
+         });
+    } else {
+        this.setState({ buttonDocLogin: true })
+    }
+}
+
+handlePatientDetails = event => {
+    if ( event.target.value === 'kimani1234') {
+        this.setState({
+            buttonPatientLogin: false,
+        })
+    } else {
+        this.setState({ buttonPatientLogin: true })
+    }
+}
+    
+
 
    handleComment = event => {
        const comment = event.target.value;
@@ -53,7 +65,6 @@ class HomeProvider extends Component {
    }
    saveComment = (event) => {
        event.preventDefault();
-       console.log(this.state.docComment);
        localStorage.setItem('comment', this.state.docComment);
    }
 
@@ -67,6 +78,8 @@ class HomeProvider extends Component {
                 handleLoadVitals: this.handleLoadVitals,
                 handlePatient: this.handlePatient,
                 handleComment: this.handleComment,
+                handleDoctorDetails: this.handleDoctorDetails,
+                handlePatientDetails: this.handlePatientDetails,
                 saveComment: this.saveComment
             }}
             >
