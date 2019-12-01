@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { HomeContext } from '../context';
 import socketIOClient from "socket.io-client";
+import {
+    withRouter
+} from 'react-router-dom';
 
 
 // provider component
@@ -14,8 +17,14 @@ class HomeProvider extends Component {
                         {id: 2, firstName: "Joyce", lastName: "Watti"}
         ],
             docComment: '',
-            buttonDocLogin: true,
-            buttonPatientLogin: true,
+            doctorEmail: '',
+            doctorPassword: '',
+            patientUsername: '',
+            patientPassword: '',
+            doctorAuthError: false,
+            patientAuthError: false,
+            docLoggedin: false,
+            patientLoggedin: false
            
         }
     }
@@ -33,24 +42,47 @@ class HomeProvider extends Component {
 
     }
 
-handleDoctorDetails = event => {
-    if ( event.target.value === 'moha1234') {
-        this.setState({
-             buttonDocLogin: false,
-            
-         });
+handleDoctorEmail = event => {
+    event.preventDefault();
+    this.setState({ doctorEmail: event.target.value})
+    
+}
+
+handleDoctorPassword = event => {
+    event.preventDefault();
+    this.setState({ doctorPassword: event.target.value})
+    
+}
+
+handlePatientUsername = event => {
+    event.preventDefault();
+    this.setState({ patientUsername: event.target.value})
+    
+}
+
+handlePatientPassword = event => {
+    event.preventDefault();
+    this.setState({ patientPassword: event.target.value})
+    
+}
+
+handleDoctorVerification = event => {
+    event.preventDefault();
+    if ( this.state.doctorEmail === 'hamisibash198@gmail.com' && this.state.doctorPassword === 'moha1234') {
+        this.setState({ docLoggedin: true});
+        this.props.history.push("/home");
     } else {
-        this.setState({ buttonDocLogin: true })
+        this.setState({ doctorAuthError: true})
     }
 }
 
-handlePatientDetails = event => {
-    if ( event.target.value === 'kimani1234') {
-        this.setState({
-            buttonPatientLogin: false,
-        })
+handlePatientVerification = event => {
+    event.preventDefault();
+    if ( this.state.patientUsername === 'kimani' && this.state.patientPassword === 'kimani1234') {
+        this.setState({ patientLoggedin: true});
+        this.props.history.push("/your-vitals");
     } else {
-        this.setState({ buttonPatientLogin: true })
+        this.setState({ patientAuthError: true})
     }
 }
     
@@ -78,8 +110,12 @@ handlePatientDetails = event => {
                 handleLoadVitals: this.handleLoadVitals,
                 handlePatient: this.handlePatient,
                 handleComment: this.handleComment,
-                handleDoctorDetails: this.handleDoctorDetails,
-                handlePatientDetails: this.handlePatientDetails,
+                handleDoctorEmail: this.handleDoctorEmail,
+                handleDoctorPassword: this.handleDoctorPassword,
+                handlePatientUsername: this.handlePatientUsername,
+                handlePatientPassword: this.handlePatientPassword,
+                handleDoctorVerification: this.handleDoctorVerification,
+                handlePatientVerification: this.handlePatientVerification,
                 saveComment: this.saveComment
             }}
             >
@@ -89,4 +125,4 @@ handlePatientDetails = event => {
     }
 }
  
-export default HomeProvider;
+export default withRouter(HomeProvider);
