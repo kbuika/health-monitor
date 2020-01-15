@@ -34,6 +34,7 @@ class HomeProvider extends Component {
         const { endpoint } = this.state;
         const socket = socketIOClient(endpoint);
         socket.on("Data", response => this.setState({ response: response}));
+        
 
         this.setState({
             buttonDocLogin: true,

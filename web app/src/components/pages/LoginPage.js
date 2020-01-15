@@ -21,7 +21,7 @@ function LoginPage() {
                                     
                                 </div>
                                 
-                                    <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+                                    <Tabs defaultActiveKey="doctor" id="uncontrolled-tab-example">
                                     <Tab eventKey="doctor" title="Doctor">
                                     <Form >
                                     <Form.Group controlId="formBasicEmail">
