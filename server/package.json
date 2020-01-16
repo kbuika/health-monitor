@@ -4,7 +4,7 @@
   "description": "Server that gets data from the APIs",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "kibuikacodes@gmail.com",
   "license": "ISC",
