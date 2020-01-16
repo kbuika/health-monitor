@@ -65,7 +65,8 @@
 /* patient records page */
 .records-head {
   margin-top: 2%;
-  margin-left: 10%;
+  margin-left: 20%;
+  margin-bottom: 4%;
 }
 .h4 {
   color: #00ab6c;
@@ -92,6 +93,8 @@
 .vitals-container {
   width: 65rem;
   margin-left: 10%;
+  align-items: center;
+  margin: auto;
 }
 .vitals-card{
   margin-left: 10%;
@@ -129,6 +132,7 @@
   .vitals-container{
     width: 20rem;
     margin-left: 2%;
+    align-items: center;
   }
 }
 

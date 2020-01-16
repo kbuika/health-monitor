@@ -3,6 +3,8 @@ import { Navbar, Nav, Card, CardDeck, Button, Form} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HomeContext } from "../state-management/context";
 import HomeProvider from "../state-management/provider/HomeProvider";
+import TemperatureGraph from "../graphs/temperatureGraph";
+
 
 class RecordsPage extends Component {
     
@@ -135,12 +137,17 @@ class RecordsPage extends Component {
 
                 
                 <div className="graphs">
-                            <h4 classname="graph-header" style={{marginBottom: "40%"}}>Graphical Representation Of Vitals</h4>
-                            <Link  style={{color: "white"}} >
-                                    <Button variant="success" type="submit"  block style={{marginBottom: "10%"}}>
-                                        Clear Storage
-                                    </Button>
-                            </Link>
+                            <h4 classname="graph-header" style={{marginBottom: "5%"}}>Graphical Representation Of Vitals</h4>
+                            <TemperatureGraph />
+                            
+                            <div style={{marginTop: "10%"}}>
+                                <Link  style={{color: "white"}} >
+                                        <Button variant="success" type="submit"  block style={{marginBottom: "10%"}}>
+                                            Clear Storage
+                                        </Button>
+                                </Link>
+                            </div>
+                            
 
                 </div>            
                 
