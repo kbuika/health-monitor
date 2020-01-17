@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { HomeContext } from "../state-management/context";
 import HomeProvider from "../state-management/provider/HomeProvider";
 import TemperatureGraph from "../graphs/temperatureGraph";
+import BloodPressureGraph from "../graphs/bloodPressureGraph";
+import PulseGraph from "../graphs/pulseGraph";
 
 class RecordsPage extends Component {
     
@@ -139,6 +141,11 @@ class RecordsPage extends Component {
                 <div className="graphs">
                             <h4 classname="graph-header" style={{marginBottom: "5%"}}>Graphical Representation Of Vitals</h4>
                             <TemperatureGraph />
+                            <hr />
+                            <BloodPressureGraph />
+                            <hr />
+                            <PulseGraph />
+
 
                             <div style={{marginTop: "10%"}}>
                                 <Link  style={{color: "white"}} >

@@ -24,7 +24,12 @@ class HomeProvider extends Component {
             doctorAuthError: false,
             patientAuthError: false,
             docLoggedin: false,
-            patientLoggedin: false
+            patientLoggedin: false,
+            temperatureData: [15, 22],
+            bloodPressureData: [65, 90],
+            pulseData: [60, 40],
+            labels: ['1330 hrs', '1340 hrs', '1350 hrs',
+            '1400 hrs', '1410 hrs', '1420 hrs', '1430 hrs', '1440 hrs', '1450 hrs', '1460 hrs', '1470 hrs', '1480 hrs', '1500 hrs' ]
            
         }
     }
@@ -33,7 +38,12 @@ class HomeProvider extends Component {
         
         const { endpoint } = this.state;
         const socket = socketIOClient(endpoint);
-        socket.on("Data", response => this.setState({ response: response}));
+        socket.on("Data", response => this.setState({
+             response: response,
+             temperatureData: [...this.state.temperatureData, response.field3],
+             bloodPressureData: [...this.state.bloodPressureData, response.field1],
+             pulseData: [...this.state.pulseData, response.field2]
+            }));
         
 
         this.setState({
