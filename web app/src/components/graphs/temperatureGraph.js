@@ -1,21 +1,66 @@
-import React from 'react';
-// STEPS TO FOLLOW
 
-// Load the data from the context provider.
-// Put the data in an array such that the new data is pushed into the array in intervals
-// The data should be split..
-    // the temperature data
-    // the time labels
-// Get the data at the graph component.
-// Set up the graph and test it.
+import React, { Component } from 'react'
+import {Line} from 'react-chartjs-2';
+import { HomeContext } from "../state-management/context";
+import HomeProvider from "../state-management/provider/HomeProvider";
 
 
-function TemperatureGraph() {
-    return (
-        <div>
+class TemperatureGraph extends Component {
+
+    render() {
+        return (
+            <HomeProvider>
+
+                <HomeContext.Consumer>
+                    {context => (
+                        <div>
+                        <Line
+                        data={
+                            {
+                                labels: context.state.labels,
+                                datasets: [
+                                {
+                                    label: 'Temperature',
+                                    fill: true,
+                                    lineTension: 0.5,
+                                    backgroundColor: 'rgba(75,192,192,1)',
+                                    borderColor: 'rgba(0,0,0,1)',
+                                    borderWidth: 2,
+                                    data: context.state.temperatureData
+                                }
+                                ]
+                            }
+                        }
+                        options={{
+                            title:{
+                            display:true,
+                            text:'Temperature Graph',
+                            fontSize:20
+                            },
+                            legend:{
+                            display:true,
+                            position:'right'
+                            }
+                        }}
+                        />
+                    </div>
+                        
+
+                    )}
+                    
+
+                </HomeContext.Consumer>
+
+            </HomeProvider>
             
-        </div>
-    )
+                   
+                
+            
+            
+        )
+    }
 }
 
 export default TemperatureGraph
+
+
