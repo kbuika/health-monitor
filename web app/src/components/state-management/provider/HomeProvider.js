@@ -42,7 +42,7 @@ class HomeProvider extends Component {
              response: response,
              temperatureData: [...this.state.temperatureData, response.field3],
              bloodPressureData: [...this.state.bloodPressureData, response.field1],
-             pulseData: [...this.state.pulseData, response.field2]
+             pulseData: [...this.state.pulseData, response.field2],
             }));
         
 

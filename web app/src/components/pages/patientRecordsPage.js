@@ -41,6 +41,8 @@ class RecordsPage extends Component {
                         <div className="vitals-container">
                 
                     <CardDeck>
+
+                    <Link to='/bloodpressureGraph'>
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
                             <div><i className="fas fa-heartbeat animated pulse infinite heart-vital"></i>
@@ -71,7 +73,9 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
+                    </Link>
                     
+                    <Link to='/pulseGraph'>
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
                             <div>
@@ -100,6 +104,9 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
+                    </Link>
+
+                    <Link to="/temperatureGraph">
 
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
@@ -129,6 +136,7 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
+                    </Link>
                 </CardDeck>
                 </div>
                         <div className="graphs">
@@ -140,11 +148,15 @@ class RecordsPage extends Component {
                 
                 <div className="graphs">
                             <h4 classname="graph-header" style={{marginBottom: "5%"}}>Graphical Representation Of Vitals</h4>
-                            <TemperatureGraph />
+                            {/* <TemperatureGraph /> */}
+                            <Link to="/temperatureGraph">Temp</Link>
                             <hr />
-                            <BloodPressureGraph />
+                            {/* <BloodPressureGraph /> */}
+                            <Link to='/bloodpressureGraph'>Blood</Link>
                             <hr />
-                            <PulseGraph />
+                            {/* <PulseGraph /> */}
+                            <Link to='/pulseGraph'>Pulse</Link>
+
 
 
                             <div style={{marginTop: "10%"}}>

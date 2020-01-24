@@ -13,9 +13,9 @@ function LoginPage() {
                 <HomeContext.Consumer>
                                 {context => (
                                 <div className="login-container">
-                                <div className="header">
-                                <i className="fas fa-heartbeat"></i>
-                                <i style={{fontFamily: "Roboto", fontSize: "28px"}}>Login as</i>
+                                <div className="header" style={{marginBottom: '50px'}}>
+                                <i className="fas fa-heartbeat animated pulse infinite"></i>
+                                <i style={{fontFamily: "Roboto", fontSize: "32px", color: 'green'}}>Login</i>
                                 
                             
                                     
