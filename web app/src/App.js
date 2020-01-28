@@ -19,9 +19,9 @@ function App() {
         <Route path="/home" component={HomePage}/>
         <Route path="/records" component={RecordsPage}/>
         <Route path="/your-vitals" component={patientRecordsPage} />
-        <Route path="/temperatureGraph" component={TemperatureGraph} />
-        <Route path="/bloodpressureGraph" component={BloodPressureGraph} />
-        <Route path="/pulseGraph" component={PulseGraph} />
+        <Route path="/vitals/graphs/temperatureGraph" component={TemperatureGraph} />
+        <Route path="/vitals/graphs/bloodpressureGraph" component={BloodPressureGraph} />
+        <Route path="/vitals/graph/pulseGraph" component={PulseGraph} />
 
       </Switch>
     </Router>

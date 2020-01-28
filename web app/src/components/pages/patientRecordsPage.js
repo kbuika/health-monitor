@@ -42,7 +42,7 @@ class RecordsPage extends Component {
                 
                     <CardDeck>
 
-                    <Link to='/bloodpressureGraph'>
+                    {/* <Link to='/bloodpressureGraph'> */}
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
                             <div><i className="fas fa-heartbeat animated pulse infinite heart-vital"></i>
@@ -73,9 +73,9 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
-                    </Link>
+                    {/* </Link> */}
                     
-                    <Link to='/pulseGraph'>
+                    {/* <Link to='/pulseGraph'> */}
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
                             <div>
@@ -104,9 +104,9 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
-                    </Link>
+                    {/* </Link> */}
 
-                    <Link to="/temperatureGraph">
+                    {/* <Link to="/temperatureGraph"> */}
 
                     <Card border="secondary" className="vitals-card">
                         <Card.Header>
@@ -136,7 +136,7 @@ class RecordsPage extends Component {
                         </Card.Text>
                         </Card.Body>
                     </Card>
-                    </Link>
+                    {/* </Link> */}
                 </CardDeck>
                 </div>
                         <div className="graphs">
@@ -149,13 +149,13 @@ class RecordsPage extends Component {
                 <div className="graphs">
                             <h4 classname="graph-header" style={{marginBottom: "5%"}}>Graphical Representation Of Vitals</h4>
                             {/* <TemperatureGraph /> */}
-                            <Link to="/temperatureGraph">Temp</Link>
+                            <Link to="/vitals/graphs/temperatureGraph">Temp</Link>
                             <hr />
                             {/* <BloodPressureGraph /> */}
-                            <Link to='/bloodpressureGraph'>Blood</Link>
+                            <Link to='/vitals/graphs/bloodpressureGraph'>Blood</Link>
                             <hr />
                             {/* <PulseGraph /> */}
-                            <Link to='/pulseGraph'>Pulse</Link>
+                            <Link to='/vitals/graphs/pulseGraph'>Pulse</Link>
 
 
 
