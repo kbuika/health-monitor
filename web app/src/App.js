@@ -8,6 +8,7 @@ import patientRecordsPage from "../src/components/pages/patientRecordsPage";
 import TemperatureGraph from "../src/components/graphs/temperatureGraph";
 import BloodPressureGraph from "../src/components/graphs/bloodPressureGraph";
 import PulseGraph from "../src/components/graphs/pulseGraph";
+import AboutUsPage from './components/pages/AboutUsPage';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/vitals/graphs/temperatureGraph" component={TemperatureGraph} />
         <Route path="/vitals/graphs/bloodpressureGraph" component={BloodPressureGraph} />
         <Route path="/vitals/graph/pulseGraph" component={PulseGraph} />
+        <Route path="/about-us" component={AboutUsPage} />
 
       </Switch>
     </Router>

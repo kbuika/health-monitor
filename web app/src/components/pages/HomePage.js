@@ -15,18 +15,22 @@ function HomePage() {
                 {context => (
                 <div>
                     <Navbar collapseOnSelect expand="lg" bg="green" variant="white">
-                        <Navbar.Brand href="#" className="logo">
+                        <Navbar.Brand href="/" className="logo">
                         <i className="fas fa-heartbeat"></i>
                                         <i style={{fontSize: "20px"}}>Health Monitor</i>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             
-                            <Nav style={{marginLeft: "60%"}}>
-                            <Nav.Link href="#">Patient Lists</Nav.Link>
-                            <Nav.Link eventKey={2} href="#">
-                                Dr. Bashir
-                            </Nav.Link>
+                        <Nav style={{marginLeft: "40%"}}>
+                                <Nav.Link eventKey={2} href="/login">
+                                    Dr. Bashir
+                                </Nav.Link>
+                            </Nav>
+                            <Nav style={{ marginLeft: '10%'}}>
+                                <Nav.Link eventKey={2} href="/about-us" >
+                                    About us
+                                </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
