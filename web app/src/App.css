@@ -144,6 +144,25 @@
   text-align: center;
 }
 
+.about-us {
+  text-align: center;
+  margin: 3em 0em 5em 0em;
+  
+}
+
+.about-us-title {
+  font-weight: bolder;
+  font-size: 3em;
+}
+
+.about-us-text {
+  margin: 2em 0em 0em 0em;
+}
+
+.about-us-text-p {
+  font-size: 1.5em;
+}
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import {Line} from 'react-chartjs-2';
-import { HomeContext } from "../state-management/context";
-import HomeProvider from "../state-management/provider/HomeProvider";
+// import { HomeContext } from "../state-management/context";
+// import HomeProvider from "../state-management/provider/HomeProvider";
 import socketIOClient from "socket.io-client";
 
 let i = 0;

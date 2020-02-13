@@ -3,9 +3,9 @@ import { Navbar, Nav, Card, CardDeck, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { HomeContext } from "../state-management/context";
 import HomeProvider from "../state-management/provider/HomeProvider";
-import TemperatureGraph from "../graphs/temperatureGraph";
-import BloodPressureGraph from "../graphs/bloodPressureGraph";
-import PulseGraph from "../graphs/pulseGraph";
+// import TemperatureGraph from "../graphs/temperatureGraph";
+// import BloodPressureGraph from "../graphs/bloodPressureGraph";
+// import PulseGraph from "../graphs/pulseGraph";
 
 class RecordsPage extends Component {
     
@@ -20,17 +20,22 @@ class RecordsPage extends Component {
                     {context => (
                         <div>
                         <Navbar collapseOnSelect expand="lg" bg="green" variant="white">
-                        <Navbar.Brand href="#" className="logo">
+                        <Navbar.Brand href="/" className="logo">
                         <i className="fas fa-heartbeat logo-heart"></i>
                                         <i style={{fontSize: "20px"}}>Health Monitor</i>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             
-                            <Nav style={{marginLeft: "60%"}}>
-                            <Nav.Link eventKey={2} to="/login">
-                                Dr. Bashir
-                            </Nav.Link>
+                            <Nav style={{marginLeft: "40%"}}>
+                                <Nav.Link eventKey={2} to="/login">
+                                    Dr. Bashir
+                                </Nav.Link>
+                            </Nav>
+                            <Nav style={{ marginLeft: '10%'}}>
+                                <Nav.Link eventKey={2} to="/about-us" >
+                                    About us
+                                </Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                         </Navbar>
