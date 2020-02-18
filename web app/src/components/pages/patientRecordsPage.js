@@ -33,9 +33,9 @@ class RecordsPage extends Component {
                                 </Nav.Link>
                             </Nav>
                             <Nav style={{ marginLeft: '10%'}}>
-                                <Nav.Link eventKey={2} to="/about-us" >
+                                <Link eventKey={2} to="/about-us" >
                                     About us
-                                </Nav.Link>
+                                </Link>
                             </Nav>
                         </Navbar.Collapse>
                         </Navbar>

@@ -28,9 +28,9 @@ function HomePage() {
                                 </Nav.Link>
                             </Nav>
                             <Nav style={{ marginLeft: '10%'}}>
-                                <Nav.Link eventKey={2} href="/about-us" >
+                                <Link eventKey={2} href="/about-us" >
                                     About us
-                                </Nav.Link>
+                                </Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

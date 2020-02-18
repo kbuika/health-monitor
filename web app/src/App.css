@@ -146,7 +146,7 @@
 
 .about-us {
   text-align: center;
-  margin: 3em 0em 5em 0em;
+  margin: 3em 2em 5em 2em;
   
 }
 
@@ -157,6 +157,10 @@
 
 .about-us-text {
   margin: 2em 0em 0em 0em;
+}
+
+.about-us-text #p {
+  font-size: 2em;
 }
 
 .about-us-text-p {

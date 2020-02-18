@@ -22,7 +22,7 @@ function App() {
         <Route path="/your-vitals" component={patientRecordsPage} />
         <Route path="/vitals/graphs/temperatureGraph" component={TemperatureGraph} />
         <Route path="/vitals/graphs/bloodpressureGraph" component={BloodPressureGraph} />
-        <Route path="/vitals/graph/pulseGraph" component={PulseGraph} />
+        <Route path="/vitals/graphs/pulseGraph" component={PulseGraph} />
         <Route path="/about-us" component={AboutUsPage} />
 
       </Switch>
