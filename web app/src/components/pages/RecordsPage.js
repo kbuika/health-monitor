@@ -26,7 +26,7 @@ class RecordsPage extends Component {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             
                         <Nav style={{marginLeft: "40%"}}>
-                                <Nav.Link eventKey={2} href="/login">
+                                <Nav.Link eventKey={2} to="/login">
                                     Dr. Bashir
                                 </Nav.Link>
                             </Nav>
