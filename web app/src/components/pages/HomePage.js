@@ -23,12 +23,12 @@ function HomePage() {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             
                         <Nav style={{marginLeft: "40%"}}>
-                                <Nav.Link eventKey={2} href="/login">
+                                <Nav.Link eventKey={2} to="/login">
                                     Dr. Bashir
                                 </Nav.Link>
                             </Nav>
                             <Nav style={{ marginLeft: '10%'}}>
-                                <Link eventKey={2} href="/about-us" >
+                                <Link eventKey={2} to="/about-us" >
                                     About us
                                 </Link>
                             </Nav>
