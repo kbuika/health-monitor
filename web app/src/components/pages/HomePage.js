@@ -14,15 +14,15 @@ function HomePage() {
             <HomeContext.Consumer>
                 {context => (
                 <div>
-                    <Navbar collapseOnSelect expand="lg" bg="green" variant="white">
+                    <Navbar collapseOnSelect expand="lg" bg="green" variant="black">
                         <Navbar.Brand href="/" className="logo">
                         <i className="fas fa-heartbeat"></i>
                                         <i style={{fontSize: "20px"}}>Health Monitor</i>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
+                        {/* <Navbar.Collapse id="responsive-navbar-nav" > */}
                             
-                        <Nav style={{marginLeft: "40%"}}>
+                        <Nav style={{marginLeft: "20%"}}>
                                 <Nav.Link eventKey={2} to="/login">
                                     Dr. Bashir
                                 </Nav.Link>
@@ -32,7 +32,7 @@ function HomePage() {
                                     About us
                                 </Link>
                             </Nav>
-                        </Navbar.Collapse>
+                        {/* </Navbar.Collapse> */}
                     </Navbar>
                     <div className="patient-list">
                         <h2>All Patients</h2>

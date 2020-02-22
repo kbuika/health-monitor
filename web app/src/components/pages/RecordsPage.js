@@ -23,9 +23,9 @@ class RecordsPage extends Component {
                                         <i style={{fontSize: "20px"}}>Health Monitor</i>
                         </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
+                        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
                             
-                        <Nav style={{marginLeft: "40%"}}>
+                        <Nav style={{marginLeft: "20%"}}>
                                 <Nav.Link eventKey={2} to="/login">
                                     Dr. Bashir
                                 </Nav.Link>
@@ -35,7 +35,7 @@ class RecordsPage extends Component {
                                     About us
                                 </Link>
                             </Nav>
-                        </Navbar.Collapse>
+                        {/* </Navbar.Collapse> */}
                         </Navbar>
                         <div>
                             <h2 className="records-head">Patient Vitals</h2>
