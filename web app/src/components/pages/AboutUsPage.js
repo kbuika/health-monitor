@@ -1,9 +1,11 @@
 import React from 'react'
 import { Table } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 function AboutUsPage() {
     return (
         <div className='about-us'>
+            <Link to='/Login' style={{textDecoration: 'none', color: 'black', float: 'left'}}>Back</Link>
             <div >
                 <h1 className='about-us-title'>About Us </h1>
             </div>

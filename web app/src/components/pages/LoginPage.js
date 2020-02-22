@@ -1,6 +1,7 @@
 import React from 'react';
-// import { Link} from "react-router-dom";
-import { Form, Button, Tabs, Tab } from "react-bootstrap";
+import { Link} from "react-router-dom";
+import { Button, Form, Tabs, Tab } from "react-bootstrap";
+
 import {HomeContext} from '../state-management/context';
 import HomeProvider from "../state-management/provider/HomeProvider";
 
@@ -12,7 +13,9 @@ function LoginPage() {
 
                 <HomeContext.Consumer>
                                 {context => (
+                                    
                                 <div className="login-container">
+                                   
                                 <div className="header" style={{marginBottom: '50px'}}>
                                 <i className="fas fa-heartbeat animated pulse infinite"></i>
                                 <i style={{fontFamily: "Roboto", fontSize: "32px", color: 'green'}}>Login</i>
@@ -49,6 +52,10 @@ function LoginPage() {
                                             
                                     
                                     </Form>
+                                    <div style={{ alignContent: 'center'}}>
+                                    <Link to='/about-us' style={{ textDecoration: 'none', color: 'white'}}>About us</Link>
+                                    </div>
+                                    
                                         
                                     </Tab>
                                     <Tab eventKey="patient" title="Patient">
