@@ -13,8 +13,13 @@ function LoginPage() {
 
                 <HomeContext.Consumer>
                                 {context => (
-                                    
+                            <div style={{ backgroundColor: "grey"}}>
+                                   
+                                        
+                                   <Link to='/about-us' style={{ textDecoration: 'none', color: 'green', float: "right", margin: '4em 3em 0em 0em'}}>About us</Link>
                                 <div className="login-container">
+                                    
+                                    
                                    
                                 <div className="header" style={{marginBottom: '50px'}}>
                                 <i className="fas fa-heartbeat animated pulse infinite"></i>
@@ -52,9 +57,7 @@ function LoginPage() {
                                             
                                     
                                     </Form>
-                                    <div style={{ alignContent: 'center'}}>
-                                    <Link to='/about-us' style={{ textDecoration: 'none', color: 'white'}}>About us</Link>
-                                    </div>
+                                    
                                     
                                         
                                     </Tab>
@@ -91,6 +94,7 @@ function LoginPage() {
                                 </Tabs>
                                 
                                 
+                            </div>
                             </div>
                                 )}
 
